@@ -130,6 +130,5 @@ function program(productos) {
     mostrarCarrito();
   }
 
-  let input = document.getElementById("input");
-  input.addEventListener("input", fnInput);
+
 }
