@@ -1,10 +1,62 @@
-fetch("./productos.json")
-  .then((respuesta) => respuesta.json())
-  .then((data) => {
-    program(data);
-  });
+// fetch("../productos.json")
+//   .then((respuesta) => respuesta.json())
+//   .then((data) => {
+//     program(data);
+//   });
 
-function program(productos) {
+
+// function program(productos) {
+let productos = [
+  {
+    "id": 1,
+    "nombre": "Rollo de canela",
+    "cantidad": 1,
+    "img": "./images/canela.jpg",
+    "desc": "El anhelado rollo de canela en tus manos.",
+    "precio": "$ 245"
+  },
+  {
+    "id": 2,
+    "nombre": "dona rellena",
+    "cantidad": 1,
+    "img": "./images/rellena.jpg",
+    "desc": "Dona rellena de exquisito  chocolate.",
+    "precio": "$ 232"
+  },
+  {
+    "id": 3,
+    "nombre": "Dona de frambuesa",
+    "cantidad": 1,
+    "img": "./images/frambuesa.jpg",
+    "desc": "La mejor dona de frambuesa de la zona.",
+    "precio": "$ 235"
+  },
+  {
+    "id": 4,
+    "nombre": "Dona de oreo",
+    "cantidad": 1,
+    "img": "./images/oreo.jpg",
+    "desc": "Una de las donas mas codiciadas de los amantes de la oreo",
+    "precio": "$ 232"
+  },
+  {
+    "id": 5,
+    "nombre": "Batidos",
+    "cantidad": 1,
+    "img": "./images/milkshake.jpg",
+    "desc": " Batidos de helado y mas!.",
+    "precio": "$ 330"
+  },
+  {
+    "id": 6,
+    "nombre": "Media docena",
+    "cantidad": 1,
+    "img": "./images/media.jpg",
+    "desc": "La media docena al mejor precio",
+    "precio": "$ 340"
+  }
+]
+
   let body = "";
   let carrito = [];
 
@@ -25,7 +77,7 @@ function program(productos) {
     carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
     mostrarCarrito();
-    document.querySelector("#activarFuncion").click(procesarPedido);
+    // document.querySelector("#activarFuncion").click(procesarPedido);
   });
   if (formulario) {
     formulario.addEventListener("submit", enviarCompra);
@@ -61,7 +113,7 @@ function program(productos) {
           <h4 class="donas__titulo">${el.nombre}</h4>
           <p class= "donas__parrafo"> ${el.desc}</p>
           <p class= "donas__parrafo"> ${el.precio}</p>
-          <button id=${el.id} class="boton-agregar" onclick=agregarProducto(${el.id}) >Comprar</button>
+          <button class="boton-agregar" onclick=agregarProducto(${el.id}) >Comprar</button>
         </div>
       </div>
   `;
@@ -131,4 +183,4 @@ function program(productos) {
   }
 
 
-}
+// }
